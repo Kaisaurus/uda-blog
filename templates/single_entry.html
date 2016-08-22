@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% if subject %}
+  <div class="well">
+    <h3>
+      {{ subject }}
+    </h3>
+
+    {% if blog %}
+      {{ blog }}
+    {% endif %}
+
+  </div>
+{% endif %}
+
+
+{% if error %}
+  <div class="error">
+  {{ error }}
+  </div>
+{% endif %}
+
+{% endblock %}

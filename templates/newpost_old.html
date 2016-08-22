@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form class="form-horizontal" method="post" accept-charset="utf-8">
+  <fieldset>
+    <legend>Blog Entry</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">
+        Subject
+      </label>
+      <div class="col-lg-10">
+        <input type="text" name="subject" class="form-control" value="{% if subject %}{{ subject }}{% endif %}" placeholder="Subject" autocomplete="off">
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <label for="textArea" class="col-lg-2 control-label">
+      Blog post
+    </label>
+    <div class="col-lg-10">
+      <textarea class="form-control" name="blog" rows="3">{% if blog %}{{ blog }}{% endif %}</textarea>
+      <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+    </div>
+  </div>
+
+  {% if error %}
+    <span class="error">
+      {{ error }}
+    </span>
+  {% endif %}
+
+  <input class="btn btn-default block-right" type="submit">
+
+</form>
+{% endblock %}

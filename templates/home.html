@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+Hi, these are my blog posts
+
+<br>
+<br>
+{% for post in blog %}
+  {% if loop.index < 10 %}
+    {% if post.subject %}
+
+      <h3>
+        {{ post.subject }}
+      </h3>
+      <div class="well">
+        {% if post.blog %}
+          {{ post.blog }}
+        {% endif %}
+
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% endblock %}

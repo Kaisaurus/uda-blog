@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form class="form-horizontal" method="post" accept-charset="utf-8">
+
+  Subject
+  <input type="text" name="subject" class="form-control" value="{% if subject %}{{ subject }}{% endif %}" placeholder="Subject">
+
+  Blog post
+  <textarea class="form-control" name="blog" rows="3">{% if blog %}{{ blog }}{% endif %}</textarea>
+
+  {% if errors %}
+    <span class="error">
+      {{ errors }}
+    </span>
+  {% endif %}
+
+  <input class="btn btn-default block-right" type="submit">
+
+</form>
+{% endblock %}
